@@ -1,0 +1,136 @@
+{
+  "products": [
+      {
+          "id": "1",
+          "name": "Cooler para Notebook",
+          "description": "Producto pensado para disminuir la temperatura generada por la computadora.",
+          "price": 25999,
+          "image": "images/art1.jpg",
+          "reviewUser": "Ana Pérez",
+          "reviewComment": "La calidad de construcción es impresionante, y el rendimiento es aún mejor. Me encantó desde el primer uso. No podría estar más satisfecho con la compra.",
+          "reviewImage": "images/r1.jpg",
+          "reviewStars": 5
+      },
+      {
+          "id": "2",
+          "name": "Procesadores Ryzen de AMD",
+          "description": "Eficientes en términos de energía y ofrecer un rendimiento potente.",
+          "price": 286984,
+          "image": "images/art2.jpg",
+          "reviewUser": "María López",
+          "reviewComment": "Es simplemente increíble. La duración de la batería sobrepasa mis expectativas, y la interfaz es tan fácil de usar. Lo recomiendo a todos.",
+          "reviewImage": "images/r2.jpg",
+          "reviewStars": 4
+      },
+      {
+          "id": "3",
+          "name": "Auricular Extremo",
+          "description": "Aísla el ruido externo y dejan salir todo o gran parte del sonido que generan.",
+          "price": 80000,
+          "image": "images/art3.jpg",
+          "reviewUser": "Juan Gómez",
+          "reviewComment": "Un cambio total en mi rutina diaria. Nunca pensé que un producto podría hacer mi vida tan fácil. Diseño elegante y funcionalidad superior.",
+          "reviewImage": "images/r3.jpg",
+          "reviewStars": 5
+      },
+      {
+          "id": "4",
+          "name": "Teclado Ergonómico",
+          "description": "Pensado para que la posición de las muñecas sobre las teclas sea lo más natural posible.",
+          "price": 20499,
+          "image": "images/art4.jpg",
+          "reviewUser": "Carlos Sánchez",
+          "reviewComment": "Cada detalle está cuidado al máximo. Los materiales son de alta calidad, y se nota el esfuerzo puesto en el diseño. Vale cada centavo.",
+          "reviewImage": "images/r4.jpg",
+          "reviewStars": 5
+      },
+      {
+          "id": "5",
+          "name": "Hub y Lector de Memorias",
+          "description": "Permiten conectar diferentes dispositivos.",
+          "price": 12555,
+          "image": "images/art5.jpg",
+          "reviewUser": "Laura Fernández",
+          "reviewComment": "La versatilidad de este producto es lo que más me impresionó. Puede usarse de tantas maneras, y siempre ofrece un rendimiento excelente.",
+          "reviewImage": "images/r5.jpg",
+          "reviewStars": 4
+      },
+      {
+          "id": "6",
+          "name": "Adaptador USB-VGA Dehuka",
+          "description": "Video de alta calidad (hasta 1920x1200).",
+          "price": 11699,
+          "image": "images/art6.jpg",
+          "reviewUser": "Pedro Martínez",
+          "reviewComment": "No puedo creer lo mucho que ha mejorado mi experiencia diaria. Es como tener un pequeño asistente personal siempre a mi lado. ¡Una joya tecnológica!",
+          "reviewImage": "images/r6.jpg",
+          "reviewStars": 5
+      },
+      {
+          "id": "7",
+          "name": "Dehuka Rj45 Plateado Adaptador Usb",
+          "description": "Compatible Pc Chromecast Notebook Tablets.",
+          "price": 17699,
+          "image": "images/art7.jpg",
+          "reviewUser": "Diego González",
+          "reviewComment": "Es impecable y la comodidad al usarlo es insuperable. Perfecto para largas horas de uso continuo. No lo cambiaría por nada.",
+          "reviewImage": "images/r7.jpg",
+          "reviewStars": 5
+      },
+      {
+          "id": "8",
+          "name": "Cables USB 2.0 y 3.0",
+          "description": "Velocidad de transferencia de datos.",
+          "price": 6299,
+          "image": "images/art8.jpg",
+          "reviewUser": "Carmen Torres",
+          "reviewComment": "El tiempo de respuesta y la precisión son impresionantes. He probado muchos productos similares, pero ninguno se compara a este.",
+          "reviewImage": "images/r8.jpg",
+          "reviewStars": 4
+      },
+      {
+          "id": "9",
+          "name": "Soporte Notebook de Aluminio Regulable y Plegable",
+          "description": "Promueve el ángulo de trabajo más ergonómico y cómodo.",
+          "price": 325999,
+          "image": "images/art9.jpg",
+          "reviewUser": "Luis Ramírez",
+          "reviewComment": "Desde el primer día, ha funcionado sin problemas. Es robusto, eficiente y realmente hace lo que promete. Muy feliz con esta compra.",
+          "reviewImage": "images/r9.jpg",
+          "reviewStars": 5
+      },
+      {
+          "id": "10",
+          "name": "Luz Usb Flexible Adaptable en Colores Varios",
+          "description": "Ideal Para Notebook, Tablets, Powerbank, varios colores disponibles.",
+          "price": 1399,
+          "image": "images/art10.jpg",
+          "reviewUser": "Isabel Jimenez",
+          "reviewComment": "El diseño es moderno y la funcionalidad es de primera. Es raro encontrar algo que combine ambas cosas tan bien. Supera todas mis expectativas.",
+          "reviewImage": "images/r10.jpg",
+          "reviewStars": 5
+      },
+      {
+          "id": "11",
+          "name": "Teclado Gamer Exo Mecánico Retroiluminado",
+          "description": "Varios efectos luminosos, manteniendo la intensidad de la tira lumínica.",
+          "price": 31699,
+          "image": "images/art11.jpg",
+          "reviewUser": "Gerardo Plata",
+          "reviewComment": "Cada función ha sido diseñada pensando en la comodidad del usuario. Es increíblemente intuitivo y fácil de usar. ¡Altamente recomendado!",
+          "reviewImage": "images/r11.jpg",
+          "reviewStars": 5
+      },
+      {
+          "id": "12",
+          "name": "Mouse Inalámbrico para Notebook Pc - Usb",
+          "description": "Diseñado para ofrecerte una experiencia de uso excepcional.",
+          "price": 8299,
+          "image": "images/art12.jpg",
+          "reviewUser": "Victoria Ocampo",
+          "reviewComment": "La velocidad y eficiencia con la que opera son extraordinarias. Me ha sorprendido gratamente y se ha convertido en un elemento esencial en mi día a día.",
+          "reviewImage": "images/r12.jpg",
+          "reviewStars": 5
+      }
+  ]
+}

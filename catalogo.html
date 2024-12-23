@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo de Productos</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <div class="contenedor_imagenes">
+            <img src="images/portada1.jpg" alt="Imagen 1" class="activa">
+            <img src="images/portada2.jpg" alt="Imagen 2">
+            <img src="images/portada3.jpg" alt="Imagen 3">
+        </div>
+        <button class="menu_toggle" aria-label="Abrir menú">☰</button>
+        <nav>
+            <ul class="menu">
+                <li><a href="index.html">I n i c i o</a></li>
+                <li><a href="catalogo.html">C a t á l o g o</a></li>
+                <li><a href="contacto.html">C o n t a c t o</a></li>
+            </ul>
+        </nav>  
+    </header>
+    <!-- desde aca agrego lo del Carrito -->
+    <div class="carrito">
+        <a href="carrito.html" class="carrito_icono">
+            <span>Mi Carrito</span>
+            <img src="images/cart_icon.png" alt="Carrito de Compras">
+            <span id="cantidad_carrito">(0)</span>
+        </a>
+    </div>
+    <main>
+        <section id="catalogo" class="productos_grid"></section>
+    </main>
+    <div class="lineas_blancas">
+        <div class="linea_superior"></div>
+        <div class="linea_inferior"></div>
+    </div>
+    <footer>
+        <div class="footer_contenedor">
+            <div class="footer_izquierda">
+                <p>Teléfono: 0800-999-2727</p>
+                <p>Dirección: Balcarce 50, Ciudad Autónoma de Buenos Aires</p>
+            </div>
+            <div class="footer_derecha">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3282.479922849847!2d-58.37922088476973!3d-34.61176068045885!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccacae6e1df1f%3A0x466d907b40b07a1!2sBalcarce%2050%2C%20C1064%20Buenos%20Aires%2C%20Argentina!5e0!3m2!1ses-419!2ses!4v1632501378145!5m2!1ses-419!2ses" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+    </footer>
+    <div class="redes_sociales">
+        <a href="https://www.instagram.com" target="_blank">
+            <img src="images/ig.svg" alt="Instagram">
+        </a>
+        <a href="https://www.x.com" target="_blank">
+            <img src="images/x.svg" alt="X">
+        </a>
+        <a href="https://www.facebook.com" target="_blank">
+            <img src="images/fc.svg" alt="Facebook">
+        </a>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,714 @@
+/* estilos del menú */
+.menu {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    padding: 0;
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+    margin: 0;
+    align-items: center;
+}
+
+.menu_toggle {
+    display: none;
+}
+
+@media screen and (max-width: 768px) {
+    .menu {
+        display: none!important; /* ocultamos manu de pantallas grandes en pantallas chicas */
+    }
+
+    .menu_active {
+        display: flex !important; /* se muestra el menu al presionar (moviles) */
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        background-color: black;
+    }
+
+    .menu_toggle {
+        display: block!important; /* muestro el botón de menu toggle en pantallas chicas */
+        cursor: pointer;
+        font-size: 24px;
+        background: none;
+        border: none;
+        color: white;
+        margin-top: 20px;
+    }
+}
+
+.header {
+    padding: 20px 10px;
+    background-color: black;
+    color: white;
+    position: relative;
+}
+
+.header_contenedor {
+    display: flex;
+    justify-content: space-between;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.contenedor_imagenes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+    width: 100%;
+    margin: 0;
+    padding-top: 20px;
+}
+
+.contenedor_imagenes img {
+    display: none;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.contenedor_imagenes img.activa {
+    display: block;
+}
+
+nav ul.menu {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    padding: 0;
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+    margin: 0;
+    align-items: center; /* centramos */
+}
+nav ul.menu li {
+    margin: 0 10px;
+}
+
+nav ul.menu a {
+    color: white;
+    text-decoration: none;
+}
+
+/* nos aseguramos que "mi carrito" este siempre visible */
+.carrito {
+    display: flex !important; 
+    align-items: center; 
+    position: fixed; /* fojamos el carrito */
+    top: 10px; 
+    right: 10px;
+    background-color: rgba(0, 0, 0, 0.8); /* dejamos fondo oscuro para que se visualice un poco mas */
+    padding: 5px 10px;
+    border-radius: 4px; /* borde redondo */
+    z-index: 1000; 
+    color: white; 
+    width: auto;
+    height: auto;
+    overflow: visible; /* para que no se corte y salga entera */
+}
+
+.carrito_icono {
+    display: flex;
+    align-items: center; 
+}
+
+.carrito_icono img {
+    width: 25px; 
+    height: 25px; 
+    margin-left: 5px; 
+    filter: invert(1); /* imagen del carrito siempre blanco */
+}
+
+/* para pantallas chicas */
+@media screen and (max-width: 768px) {
+    .carrito {
+        display: flex !important; /* carrito siempre visible  */
+        position: fixed;
+        top: 10px;
+        right: 10px;
+        background-color: rgba(0, 0, 0, 0.8);
+        z-index: 1000;
+        color: white;
+        padding: 5px 10px;
+        border-radius: 4px;
+    }
+
+    .menu {
+        display: none; /* ocultamos menú por defecto en pantallas chicas */
+    }
+
+    .menu_active {
+        display: flex; /* mustra el menu si esta activo */
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        background-color: black;
+    }
+
+    .menu_toggle {
+        display: block; /* muestro menú toggle en pantallas chicas */
+        cursor: pointer;
+        font-size: 24px;
+        background: none;
+        border: none;
+        color: white;
+        margin-top: 20px;
+    }
+}
+
+.titulo_centrado {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.productos_grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* se muestarn en 4 columnas */
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+}
+
+.card_producto {
+    background-color: white;
+    color: black;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    text-align: center;
+    margin: 10px; 
+    max-width: 300px; /* Ancho máximo de la card */
+    flex: 1 1 300px; 
+}
+
+.card_producto img {
+    width: 100%;
+    height: auto;
+    border-bottom: 1px solid #ccc;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.card_producto h3 {
+    margin: 10px 0;
+}
+
+.card_producto .producto_descripcion {
+    padding: 0 10px 10px;
+}
+
+.card_producto .precio {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0;
+}
+
+/* media query para pantallas chicas */
+@media screen and (max-width: 768px) {
+    .productos_grid {
+        grid-template-columns: 1fr; /* fijamos la cantidad */
+    }
+}
+
+
+.card_producto .precio_descuento {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: white;
+}
+.boton_resenia {
+    background-color: #007bff; 
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.boton_resenia:hover {
+    background-color: #0056b3;
+}
+
+footer {
+    background-color: black;
+    padding: 20px 0;
+    color: white;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer_contenedor {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%; 
+    padding: 0 10px;
+}
+
+.footer_izquierda, .footer_derecha {
+    flex: 1;
+    padding: 10px;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.footer_derecha iframe {
+    width: 100%;
+    height: 200px;
+    border: 0;
+}
+
+/* otra parte de modal */
+.modal { 
+    display: none; /* oculto por defecto */ 
+    position: fixed;  
+    z-index: 1; /* sobre otros elementos */ 
+    left: 0; 
+    top: 0; 
+    width: 100%; 
+    height: 100%; 
+    overflow: auto;  
+    background-color: rgba(0, 0, 0, 0.4);  
+}
+.modal_content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 300px;
+    transform: translateY(-50%);
+}
+
+.close {
+    color: #ee0e0e;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover, .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.review {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.review_photo {
+    border-radius: 50%;
+    width: 50px;
+    margin-bottom: 15px;
+}
+
+.review_name {
+    font-weight: bold;
+}
+
+.review_stars {
+    color: gold;
+    margin: 10px 0;
+}
+
+.review_text {
+    color: black;
+}
+/* redes sociales */
+.redes_sociales {
+    background-color: #333;
+    text-align: center;
+    padding: 5px 0;
+}
+
+.redes_sociales a {
+    margin: 0 20px;
+    display: inline-block;
+}
+
+.redes_sociales img {
+    width: 15px; /* se ajusta tamaño de iconos  */
+    height: auto;
+}
+
+@media screen and (max-width: 768px) {
+    .modal_content {
+        margin: 50% auto; /* centra el modal pantallas chicas */
+        transform: translateY(-50%);
+    }
+}
+
+/* formulario de contacto */
+.contenedor_formulario {
+    background-color: white;
+    color: black;
+    padding: 20px 30px; 
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    max-width: 600px;
+    margin: 0 auto; /* centra el contenedor */
+}
+
+.formulario_contacto {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    padding: 20px;
+}
+
+.grupo_formulario {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 500px;
+    padding-left: 10px; 
+    padding-right: 10px; 
+    margin-left: auto; 
+    margin-right: auto; 
+}
+
+.grupo_formulario label {
+    margin-bottom: 5px;
+}
+
+.grupo_formulario input,
+.grupo_formulario textarea {
+    width: 100%; /* dejamos el ancho total */
+    max-width: 500px; 
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.btn_enviar {
+    padding: 10px 20px;
+    border: none;
+    background-color: rgb(7, 94, 148);
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn_enviar:hover {
+    background-color: rgb(60, 149, 205);
+}
+
+.lineas_blancas {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px 0; 
+}
+
+.linea_superior, .linea_inferior {
+    width: 100%;
+    border-top: 1px solid white;
+    margin: 2px 0; 
+}
+
+/* boton "añadir al carrito" */
+.boton_carrito {
+    background-color: #007bff; 
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px; 
+    transition: background-color 0.3s ease;
+}
+
+.boton_carrito:hover {
+    background-color: #0056b3;
+}
+
+/* estilos de la tabla del carrito */
+.table-wrapper {
+    width: 100%;
+    overflow-x: auto; /* scroll horizontal */
+    margin: 20px auto; /* tabla centrada en horizontal */
+    background-color: #fff; 
+    border: 1px solid #0056b3; /* Borde para resaltar la tabla */
+}
+
+@media screen and (min-width: 1024px) {
+    .table-wrapper {
+        max-width: 60%; /* dejamos en 60 en ancho de  pantalla */
+        margin: 0 auto; /* centramos */
+    }
+
+    table {
+        width: 100%;
+        max-width: 100%; 
+    }
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table thead th {
+    background-color: #0056b3; 
+    color: white;
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+table tbody td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+table tbody img.producto_img.pequeña {
+    width: 50px; /* reajustamos tamaño de la imagen */
+    height: auto;
+}
+
+/* pantallas chicas */
+@media screen and (max-width: 768px) {
+    .table-wrapper {
+        overflow-x: hidden; /* escondemos scroll horizontal en pantallas chicas */
+    }
+
+    table, thead, tbody, th, td, tr {
+        display: block;
+    }
+
+    table thead {
+        display: none;
+    }
+
+    table tbody tr {
+        margin-bottom: 20px;
+        border: 1px solid #ddd;
+        padding: 10px;
+    }
+
+    table tbody td {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 0;
+    }
+
+    table tbody td:before {
+        content: attr(data-label);
+        flex: 0 0 40%;
+        font-weight: bold;
+        text-align: left;
+    }
+
+    table tbody td img.producto_img.pequeña {
+        flex: 1;
+        max-width: 50px; 
+        height: auto;
+    }
+}
+
+.table-wrapper::-webkit-scrollbar {
+    height: 12px; 
+    width: 12px; 
+}
+
+.table-wrapper::-webkit-scrollbar-thumb {
+    background-color: #007bff; /* color del scroll */
+    border-radius: 10px; 
+    border: 3px solid #fff; 
+}
+
+.table-wrapper::-webkit-scrollbar-track {
+    background-color: #f1f1f1; 
+}
+
+
+.linea_fina {
+    border: none;
+    height: 1px;
+    background-color: #000; 
+    margin: 10px 0; 
+}
+
+/*  ancho del contenedor del formulario igual a la tabla */
+.table-wrapper {
+    width: 100%;
+    overflow-x: auto; 
+    margin: 20px auto; 
+    background-color: #fff; 
+    border: 1px solid #007bff; 
+}
+
+/* centrar la tabla en pantallas grandes */
+@media screen and (min-width: 1024px) {
+    .table-wrapper {
+        max-width: 60%; /* ancho igual al de la tabla */
+        margin: 0 auto; 
+    }
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table thead th {
+    background-color: #007bff; 
+    color: white;
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+table tbody td {
+    padding: 10px;
+    border: 1px solid #007bff;
+    text-align: left;
+}
+
+table tbody img.producto_img.pequeña {
+    width: 50px; /* Ajusta el tamaño de la imagen */
+    height: auto;
+}
+
+/* estilo para  formulario de compra que esta integrado en carrito */
+.formulario_compra {
+    border: 2px solid #007bff; 
+    padding: 20px;
+    margin: 20px auto; 
+    max-width: 60%; /* Ancho igual al de la tabla */
+    background-color: #f9f9f9; 
+}
+
+.formulario_compra label {
+    display: block;
+    margin: 10px 0 5px;
+    font-weight: bold;
+}
+
+.formulario_compra input[type="text"],
+.formulario_compra input[type="email"],
+.formulario_compra input[type="tel"] {
+    width: 90%; 
+    padding: 10px; 
+    margin: 0 auto 10px; /* centrar el input */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    display: block;
+}
+
+/* estilo del boton "Eliminar" en rojo */
+.boton_eliminar {
+    background-color: #dc3545; 
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.boton_eliminar:hover {
+    background-color: #c82333; /* fondo rojo oscuro */
+    color: white;
+}
+
+/* estilo  boton "Comprar" */
+.boton_comprar {
+    background-color: #007bff; 
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.boton_comprar:hover {
+    background-color: #0056b3; /* fondo azul oscuro */
+    color: white;
+}
+
+/* estilos para pantallas chicas */
+@media screen and (max-width: 768px) {
+    .table-wrapper {
+        overflow-x: hidden; /* ocultamos scroll horizontal */
+    }
+
+    table, thead, tbody, th, td, tr {
+        display: block;
+    }
+
+    table thead {
+        display: none;
+    }
+
+    table tbody tr {
+        margin-bottom: 20px;
+        border: 1px solid #ddd;
+        padding: 10px;
+    }
+
+    table tbody td {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 0;
+    }
+
+    table tbody td:before {
+        content: attr(data-label);
+        flex: 0 0 40%;
+        font-weight: bold;
+        text-align: left;
+    }
+
+    table tbody td img.producto_img.pequeña {
+        flex: 1;
+        max-width: 50px; /* ajusta tamaño de la imagen */
+        height: auto;
+    }
+}
+/* esrtilos del scrooll */
+.table-wrapper::-webkit-scrollbar {
+    height: 12px; 
+    width: 12px; 
+}
+
+.table-wrapper::-webkit-scrollbar-thumb {
+    background-color: #007bff; 
+    border-radius: 10px; 
+    border: 3px solid #fff; 
+}
+
+.table-wrapper::-webkit-scrollbar-track {
+    background-color: #f1f1f1; 
+}
+
+/* estilo para centrar el total */
+.total_carrito {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.total_carrito h2 {
+    display: inline-block;
+    margin: 0;
+    font-size: 1.5em; 
+    color: #007bff; 
+}

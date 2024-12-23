@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accesorios de Computación</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <div class="contenedor_imagenes">
+            <img src="images/portada1.jpg" alt="Imagen 1" class="activa">
+            <img src="images/portada2.jpg" alt="Imagen 2">
+            <img src="images/portada3.jpg" alt="Imagen 3">
+        </div>
+        <button class="menu_toggle" aria-label="Abrir menú">☰</button>
+        <nav>
+            <ul class="menu">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="productos.html">Productos</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+                <li class="carrito">
+                    <a href="carrito.html" class="carrito_icono">
+                        <span>Mi Carrito</span>
+                        <img src="images/cart_icon.png" alt="Carrito de Compras">
+                        <span id="cantidad_carrito">(0)</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="contacto">
+            <h2 class="titulo_centrado">Contáctanos</h2>
+            <div class="contenedor_formulario">
+                <form action="https://formspree.io/f/mnnqpbwq" method="POST" id="formulario_contacto" class="formulario_contacto">
+                    <div class="grupo_formulario">
+                        <label for="nombre">Nombre:</label>
+                        <input type="text" id="nombre" name="nombre" autocomplete="name" required>
+                    </div>
+                    <div class="grupo_formulario">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" autocomplete="email" required>
+                    </div>
+                    <div class="grupo_formulario">
+                        <label for="mensaje">Mensaje:</label>
+                        <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn_enviar">Enviar</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer_izquierda">
+            <p>Teléfono: 0800-999-2727</p>
+            <p>Dirección: Balcarce 50, Ciudad Autónoma de Buenos Aires</p>
+        </div>
+        <div class="footer_derecha">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3282.479922849847!2d-58.37922088476973!3d-34.61176068045885!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccacae6e1df1f%3A0x466d907b40b07a1!2sBalcarce%2050%2C%20C1064%20Buenos%20Aires%2C%20Argentina!5e0!3m2!1ses-419!2ses!4v1632501378145!5m2!1ses-419!2ses" width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+    </footer>
+    <div class="redes_sociales">
+        <a href="https://www.instagram.com" target="_blank">
+            <img src="images/ig.svg" alt="Instagram">
+        </a>
+        <a href="https://www.x.com" target="_blank">
+            <img src="images/x.svg" alt="X">
+        </a>
+        <a href="https://www.facebook.com" target="_blank">
+            <img src="images/fc.svg" alt="Facebook">
+        </a>
+    </div>
+
+    <script src="js/script.js"></script>
+    <script>
+        document.getElementById('formulario_contacto').addEventListener('submit', function(event) {
+            event.preventDefault(); // tomamos envío del formulario por defecto
+
+            // se envia el form 
+            fetch(this.action, {
+                method: this.method,
+                body: new FormData(this),
+                headers: {
+                    'Accept': 'application/json'
+                }
+            }).then(response => {
+                if (response.ok) {
+                    // Limpio el formulario
+                    this.reset();
+                    // Muestro mensaje de gracias y redireccxiono a inicio
+                    alert('¡Gracias por contactarnos! En breve nos comunicaremos con usted.');
+                    window.location.href = 'index.html';
+                } else {
+                    alert('Hubo un problema al enviar el formulario. Por favor, intente de nuevo.');
+                }
+            }).catch(error => {
+                console.error('Error:', error);
+                alert('Hubo un problema al enviar el formulario. Por favor, intente de nuevo.');
+            });
+        });
+    </script>
+</body>
+</html>

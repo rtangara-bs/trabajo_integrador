@@ -11,7 +11,6 @@
             color: #FFFFFF; /* Color del texto blanco */
         }
     </style>
-    
 </head>
 <body>
     <header>
@@ -26,16 +25,17 @@
                 <li><a href="index.html">Inicio</a></li>
                 <li><a href="catalogo.html">Productos</a></li>
                 <li><a href="contacto.html">Contacto</a></li>
-                <li class="carrito">
-                    <a href="carrito.html" class="carrito_icono">
-                        <span>Mi Carrito</span>
-                        <img src="images/cart_icon.png" alt="Carrito de Compras">
-                        <span id="cantidad_carrito">(0)</span>
-                    </a>
-                </li>
             </ul>
         </nav>
     </header>
+    <!-- Contenedor del Carrito -->
+    <div class="carrito">
+        <a href="carrito.html" class="carrito_icono">
+            <span>Mi Carrito</span>
+            <img src="images/cart_icon.png" alt="Carrito de Compras">
+            <span id="cantidad_carrito">(0)</span>
+        </a>
+    </div>
 
     <main>
         <section id="contacto">
@@ -60,13 +60,21 @@
         </section>
     </main>
 
+    <!-- Añadimos las líneas aquí -->
+    <div class="lineas_blancas">
+        <div class="linea_superior"></div>
+        <div class="linea_inferior"></div>
+    </div>
+
     <footer>
-        <div class="footer_izquierda">
-            <p>Teléfono: 0800-999-2727</p>
-            <p>Dirección: Balcarce 50, Ciudad Autónoma de Buenos Aires</p>
-        </div>
-        <div class="footer_derecha">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3282.479922849847!2d-58.37922088476973!3d-34.61176068045885!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccacae6e1df1f%3A0x466d907b40b07a1!2sBalcarce%2050%2C%20C1064%20Buenos%20Aires%2C%20Argentina!5e0!3m2!1ses-419!2ses!4v1632501378145!5m2!1ses-419!2ses" width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        <div class="footer_contenedor">
+            <div class="footer_izquierda">
+                <p>Teléfono: 0800-999-2727</p>
+                <p>Dirección: Balcarce 50, Ciudad Autónoma de Buenos Aires</p>
+            </div>
+            <div class="footer_derecha">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3282.479922849847!2d-58.37922088476973!3d-34.61176068045885!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccacae6e1df1f%3A0x466d907b40b07a1!2sBalcarce%2050%2C%20C1064%20Buenos%20Aires%2C%20Argentina!5e0!3m2!1ses-419!2ses!4v1632501378145!5m2!1ses-419!2ses" width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
         </div>
     </footer>
     <div class="redes_sociales">
@@ -84,7 +92,7 @@
     <script src="js/script.js"></script>
     <script>
         document.getElementById('formulario_contacto').addEventListener('submit', function(event) {
-            event.preventDefault(); // tomamos envío del formulario por defecto
+            event.preventDefault(); // tomamos formulario por defecto
 
             // se envia el form 
             fetch(this.action, {

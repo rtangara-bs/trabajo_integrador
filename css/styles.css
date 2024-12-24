@@ -78,8 +78,8 @@ nav ul.menu {
     justify-content: space-around;
     list-style: none;
     padding: 0;
-    border-top: 1px solid white;
-    border-bottom: 1px solid white;
+    border-top: 1px solid rgb(11, 73, 136);
+    border-bottom: 1px solid rgb(11, 73, 136);
     margin: 0;
     align-items: center; /* centramos */
 }
@@ -107,6 +107,7 @@ nav ul.menu a {
     width: auto;
     height: auto;
     overflow: visible; /* para que no se corte y salga entera */
+    border: 1px solid rgb(11, 73, 136);
 }
 
 .carrito_icono {
@@ -118,7 +119,7 @@ nav ul.menu a {
     width: 25px; 
     height: 25px; 
     margin-left: 5px; 
-    filter: invert(1); /* imagen del carrito siempre blanco */
+   /* filter: invert(1); /* imagen del carrito siempre blanco */
 }
 
 /* para pantallas chicas */
@@ -137,6 +138,7 @@ nav ul.menu a {
 
     .menu {
         display: none; /* ocultamos menú por defecto en pantallas chicas */
+        
     }
 
     .menu_active {
@@ -170,18 +172,24 @@ nav ul.menu a {
     justify-content: center;
     padding: 20px;
 }
-
 .card_producto {
-    background-color: white;
-    color: black;
-    border: 1px solid #ccc;
+    background-color: rgb(33, 32, 32);
+    color: rgb(249, 246, 246);
+    border: 1px solid #0f56a7;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 10px;
     text-align: center;
     margin: 10px; 
     max-width: 300px; /* Ancho máximo de la card */
-    flex: 1 1 300px; 
+    flex: 1 1 300px;
+    transition: box-shadow 0.3s, transform 0.3s; /* Añadir transición para suavizar el efecto */
+}
+
+ /* agrego efecto con una sombra  */
+.card_producto:hover {
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+    transform: scale(1.05);  
 }
 
 .card_producto img {
@@ -243,34 +251,51 @@ footer {
     flex-direction: column;
     align-items: center;
 }
-
 .footer_contenedor {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
-    width: 100%; 
-    padding: 0 10px;
+    align-items: center;
+    padding: 20px;
+    background-color: #242323;
 }
 
-.footer_izquierda, .footer_derecha {
-    flex: 1;
-    padding: 10px;
-    width: 100%;
-    text-align: center;
-    margin-bottom: 10px;
+.footer_izquierda {
+    flex: 1; 
+}
+
+.footer_derecha {
+    flex: 3; 
 }
 
 .footer_derecha iframe {
     width: 100%;
-    height: 200px;
-    border: 0;
+    height: auto;
 }
+
+/* Media Query para pantallas chicas */
+@media screen and (max-width: 768px) {
+    .footer_contenedor {
+        flex-direction: column; 
+        align-items: flex-start; 
+    }
+
+    .footer_izquierda,
+    .footer_derecha {
+        width: 100%; /* el 100% del ancho */
+        margin-bottom: 10px; 
+    }
+
+    .footer_derecha iframe {
+        height: 200px; /* Ajusta la altura del iframe */
+    }
+}
+
 
 /* otra parte de modal */
 .modal { 
     display: none; /* oculto por defecto */ 
     position: fixed;  
-    z-index: 1; /* sobre otros elementos */ 
+    z-index: 1; 
     left: 0; 
     top: 0; 
     width: 100%; 
@@ -279,10 +304,10 @@ footer {
     background-color: rgba(0, 0, 0, 0.4);  
 }
 .modal_content {
-    background-color: #fefefe;
+    background-color: #1f1e1e;
     margin: 15% auto;
     padding: 20px;
-    border: 1px solid #888;
+    border: 1px solid #4d5866;
     width: 80%;
     max-width: 300px;
     transform: translateY(-50%);
@@ -324,23 +349,32 @@ footer {
 }
 
 .review_text {
-    color: black;
+    color: rgb(232, 227, 227);
 }
+
 /* redes sociales */
 .redes_sociales {
     background-color: #333;
     text-align: center;
     padding: 5px 0;
+    border-top: 1px solid rgb(11, 73, 136); 
+    border-bottom: 1px solid rgb(11, 73, 136); 
 }
+
 
 .redes_sociales a {
     margin: 0 20px;
     display: inline-block;
 }
-
 .redes_sociales img {
-    width: 15px; /* se ajusta tamaño de iconos  */
+    width: 15px; 
     height: auto;
+    filter: brightness(1.5) invert(1); 
+    transition: filter 0.3s; 
+}
+
+.redes_sociales img:hover {
+    filter: brightness(0) invert(2);
 }
 
 @media screen and (max-width: 768px) {
@@ -352,10 +386,10 @@ footer {
 
 /* formulario de contacto */
 .contenedor_formulario {
-    background-color: white;
-    color: black;
+    background-color: rgb(30, 29, 29);
+    color: rgb(246, 243, 243);
     padding: 20px 30px; 
-    border: 1px solid #ccc;
+    border: 1px solid #1a5eb8;
     border-radius: 8px;
     max-width: 600px;
     margin: 0 auto; /* centra el contenedor */
@@ -415,7 +449,7 @@ footer {
 
 .linea_superior, .linea_inferior {
     width: 100%;
-    border-top: 1px solid white;
+    border-top: 1px solid rgb(4, 38, 70);
     margin: 2px 0; 
 }
 
@@ -439,8 +473,8 @@ footer {
     width: 100%;
     overflow-x: auto; /* scroll horizontal */
     margin: 20px auto; /* tabla centrada en horizontal */
-    background-color: #fff; 
-    border: 1px solid #0056b3; /* Borde para resaltar la tabla */
+    background-color: #ede1e1; 
+    border: 1px solid #0056b3; 
 }
 
 @media screen and (min-width: 1024px) {
@@ -548,14 +582,14 @@ table tbody img.producto_img.pequeña {
     width: 100%;
     overflow-x: auto; 
     margin: 20px auto; 
-    background-color: #fff; 
+    background-color: #242323; 
     border: 1px solid #007bff; 
 }
 
 /* centrar la tabla en pantallas grandes */
 @media screen and (min-width: 1024px) {
     .table-wrapper {
-        max-width: 60%; /* ancho igual al de la tabla */
+        max-width: 60%; 
         margin: 0 auto; 
     }
 }
@@ -580,7 +614,7 @@ table tbody td {
 }
 
 table tbody img.producto_img.pequeña {
-    width: 50px; /* Ajusta el tamaño de la imagen */
+    width: 50px; 
     height: auto;
 }
 
@@ -590,7 +624,7 @@ table tbody img.producto_img.pequeña {
     padding: 20px;
     margin: 20px auto; 
     max-width: 60%; /* Ancho igual al de la tabla */
-    background-color: #f9f9f9; 
+    background-color: #2b2a2a; 
 }
 
 .formulario_compra label {
@@ -713,6 +747,11 @@ table tbody img.producto_img.pequeña {
     color: #007bff; 
 }
 body {
-    background-color: #000000; /* Color negro */
-    color: #FFFFFF; /* Color del texto blanco */
+    background-color: #000000; 
+    color: #FFFFFF; 
+}
+
+.carrito a:link,
+.carrito a:visited {
+    color: white; 
 }

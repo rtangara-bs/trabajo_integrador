@@ -17,7 +17,6 @@ function mostrarSiguienteImagen() {
 } 
 
 setInterval(mostrarSiguienteImagen, 3000); // le doy 3 segundos a cada imagen 
-
 // modales que usamos para las reseñas7 opiniones 
 function abrirModal(idModal) { 
     const modal = document.getElementById(idModal); 
@@ -40,9 +39,12 @@ window.addEventListener('click', (e) => {
         e.target.style.display = 'none'; 
     } 
 }); 
-
 // productos y carrito de compras 
 document.addEventListener('DOMContentLoaded', () => {
+    // Cargar la cantidad actual del carrito desde localStorage
+    let cantidadCarrito = localStorage.getItem('cantidadCarrito') || 0;
+    document.getElementById('cantidad_carrito').innerText = `(${cantidadCarrito})`;
+
     if (window.location.pathname.endsWith('carrito.html')) { 
         cargarProductosCarrito();
     } else {
@@ -56,8 +58,6 @@ document.addEventListener('DOMContentLoaded', () => {
             .catch(error => console.error('Error al cargar los datos:', error));
     }
 });
-
-
 // se muestra productos destacados  
 function mostrarProductosDestacados(productos) { 
     const contenedor = document.getElementById('productos_destacados'); 
@@ -97,7 +97,6 @@ function mostrarProductosDestacados(productos) {
         }); 
     } 
 } 
-
 // muestro productos en Catálogo  
 function mostrarProductosCatalogo(productos) { 
     const contenedor = document.getElementById('catalogo'); 
@@ -152,9 +151,6 @@ function mostrarProductosCarrito(productos) {
         totalPrecioElemento.textContent = totalPrecio.toFixed(2);
     }
 }
-
-
-
 // agrego productos al Carrito 
 function añadirAlCarrito(productId, cantidad) { 
     let carrito = JSON.parse(localStorage.getItem('carrito')) || []; 
@@ -185,22 +181,10 @@ function eliminarDelCarrito(productId) {
     actualizarCantidadCarrito();
 }
 
-
 // actualizo cantidad del Carrito 
 function actualizarCantidadCarrito() { 
     let carrito = JSON.parse(localStorage.getItem('carrito')) || []; 
     let totalCantidad = carrito.reduce((total, item) => total + item.cantidad, 0); 
+    localStorage.setItem('cantidadCarrito', totalCantidad); // Actualiza la cantidad en localStorage
     document.getElementById('cantidad_carrito').textContent = `(${totalCantidad})`; 
-}
-
-// cargo y muestro productos del carrito
-function cargarProductosCarrito() {
-    fetch('data/db.json')
-        .then(response => response.json())
-        .then(data => {
-            localStorage.setItem('carrito_products', JSON.stringify(data.products));
-            mostrarProductosCarrito(data.products);
-            actualizarCantidadCarrito();
-        })
-        .catch(error => console.error('Error al cargar los datos:', error));
 }

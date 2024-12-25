@@ -28,7 +28,7 @@
     }
 
     .menu_toggle {
-        display: block!important; /* muestro el botón de menu toggle en pantallas chicas */
+        display: block!important; /* muestro el boton de menu toggle en pantallas chicas */
         cursor: pointer;
         font-size: 24px;
         background: none;
@@ -99,7 +99,7 @@ nav ul.menu a {
     position: fixed; /* fojamos el carrito */
     top: 10px; 
     right: 10px;
-    background-color: rgba(0, 0, 0, 0.8); /* dejamos fondo oscuro para que se visualice un poco mas */
+    background-color: rgba(0, 0, 0, 0.8); /* dejamos fondo oscuro para que resalte un poco mas */
     padding: 5px 10px;
     border-radius: 4px; /* borde redondo */
     z-index: 1000; 
@@ -137,7 +137,7 @@ nav ul.menu a {
     }
 
     .menu {
-        display: none; /* ocultamos menú por defecto en pantallas chicas */
+        display: none; /* ocultamos menu por defecto en pantallas chicas */
         
     }
 
@@ -150,7 +150,7 @@ nav ul.menu a {
     }
 
     .menu_toggle {
-        display: block; /* muestro menú toggle en pantallas chicas */
+        display: block; /* muestro menu toggle en pantallas chicas */
         cursor: pointer;
         font-size: 24px;
         background: none;
@@ -183,7 +183,7 @@ nav ul.menu a {
     margin: 10px; 
     max-width: 300px; /* Ancho máximo de la card */
     flex: 1 1 300px;
-    transition: box-shadow 0.3s, transform 0.3s; /* Añadir transición para suavizar el efecto */
+    transition: box-shadow 0.3s, transform 0.3s; /* Añadir transicion para suavizar el efecto */
 }
 
  /* agrego efecto con una sombra  */
@@ -272,7 +272,7 @@ footer {
     height: auto;
 }
 
-/* Media Query para pantallas chicas */
+/* media query para pantallas chicas */
 @media screen and (max-width: 768px) {
     .footer_contenedor {
         flex-direction: column; 
@@ -281,12 +281,12 @@ footer {
 
     .footer_izquierda,
     .footer_derecha {
-        width: 100%; /* el 100% del ancho */
+        width: 100%; 
         margin-bottom: 10px; 
     }
 
     .footer_derecha iframe {
-        height: 200px; /* Ajusta la altura del iframe */
+        height: 200px; /* ajusta la altura del iframe */
     }
 }
 
@@ -480,7 +480,7 @@ footer {
 @media screen and (min-width: 1024px) {
     .table-wrapper {
         max-width: 60%; /* dejamos en 60 en ancho de  pantalla */
-        margin: 0 auto; /* centramos */
+        margin: 0 auto; 
     }
 
     table {
@@ -623,7 +623,7 @@ table tbody img.producto_img.pequeña {
     border: 2px solid #007bff; 
     padding: 20px;
     margin: 20px auto; 
-    max-width: 60%; /* Ancho igual al de la tabla */
+    max-width: 60%; /* ancho igual al de la tabla */
     background-color: #2b2a2a; 
 }
 

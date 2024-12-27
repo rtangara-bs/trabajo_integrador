@@ -202,3 +202,63 @@ function mostrarProductosCatalogo(productos) {
         }); 
     } 
 }
+function realizarCompra(event) {
+    event.preventDefault();  // para que no nos dirija al saludo de formspree
+
+    // mensajito al usuario
+    const mensajeUsuario = 'Gracias, a la brevedad nos comunicaremos.';
+
+    // creamos objeto con los datos del formulario
+    const form = document.getElementById('formulario_compra');
+    const formData = new FormData(form);
+    const formObject = {};
+    formData.forEach((value, key) => {
+        formObject[key] = value;
+    });
+
+    // agreamos mensaje al formulario
+    formObject['mensaje'] = mensajeUsuario;
+    
+    // convertir el objeto a JSON
+    const body = JSON.stringify(formObject);
+
+    // enviar el formulario a Formspree
+    fetch('https://formspree.io/f/mnnqpbwq', {
+        method: 'POST',
+        body: body,
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        }
+    })
+    .then(response => {
+        if (response.ok) {
+            // limpiar tabla y contador de carrito
+            localStorage.removeItem('carrito');
+            localStorage.setItem('cantidadCarrito', 0);
+
+            // actualizamos
+            cargarProductosCarrito();
+            actualizarCantidadCarrito();
+
+            // mensaje 
+            alert('¡Muchas Gracias, su compra fue realizada con exito!');
+
+            // después de un retraso redireccionamos a inicio
+            setTimeout(() => {
+                window.location.href = 'index.html';
+            }, 1000);
+        } else {
+            alert('Hubo un problema con su compra. Por favor intente nuevamente.');
+        }
+    })
+    .catch(error => {
+        alert('Hubo un problema con su compra. Por favor intente nuevamente.');
+    });
+
+    // Previene que el formulario recargue la página inmediatamente
+    return false;
+}
+
+
+

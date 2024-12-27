@@ -69,16 +69,15 @@
         <!-- agrego un formulario de compra similar a la de contacto -->
         <div class="table-wrapper">
             <div class="formulario_compra">
-                <form action="https://formspree.io/f/mnnqpbwq" method="POST" id="formulario_compra">
+                <form action="https://formspree.io/f/mnnqpbwq" method="POST" id="formulario_compra" onsubmit="return realizarCompra(event)">
                     <label for="nombre_cliente">Nombre:</label>
                     <input type="text" id="nombre_cliente" name="nombre_cliente" required>
                     <label for="email_cliente">Email:</label>
                     <input type="email" id="email_cliente" name="email_cliente" required>
                     <label for="telefono_cliente">Teléfono:</label>
                     <input type="tel" id="telefono_cliente" name="telefono_cliente" required>
-                    <input type="hidden" id="detalle_compra" name="detalle_compra">
                     <button type="submit" class="boton_comprar">Comprar</button>
-                </form>
+                </form>                                                                                           
             </div>
         </div>
     </main>
